@@ -1,0 +1,53 @@
+/*О НАС*/
+.about-us-list {
+  display: flex;
+  margin: 0;
+  .title {
+    @include font(14px, 0);
+    text-transform: uppercase;
+    color: $secondary-text-color;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    margin: 0;
+  }
+  &-text {
+    @include font(14px, 0, 1.71);
+    letter-spacing: 0.03em;
+  }
+}
+.about-us-list-item {
+  display: block;
+
+  &:not(:last-child) {
+    margin-right: 30px;
+  }
+}
+.about-us-list-back::before {
+  width: 270px;
+  height: 120px;
+  left: 515px;
+  top: 774px;
+  content: "";
+  display: block;
+  background: #f5f4fa;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70px;
+  padding-top: 25px;
+  padding-right: 100px;
+  padding-bottom: 25px;
+  padding-left: 100px;
+}
+.antena-icon::before {
+  background-image: url(../images/icons/antenna1.svg);
+}
+.clock-icon::before {
+  background-image: url(../images/icons/clock1.svg);
+}
+.diagram-icon::before {
+  background-image: url(../images/icons/diagram1.svg);
+}
+.astronaut-icon::before {
+  background-image: url(../images/icons/astronaut1.svg);
+}

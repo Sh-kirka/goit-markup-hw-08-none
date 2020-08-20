@@ -1,0 +1,18 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./base/base";
+
+@import "./components/container";
+@import "./components/section";
+@import "./components/modal-form";
+@import "./components/social-list";
+
+@import "./layout/header";
+@import "./layout/modal-btn";
+@import "./layout/hero";
+@import "./layout/about";
+@import "./layout/whatawedoing";
+@import "./layout/team";
+@import "./layout/clients";
+@import "./layout/footer";
+@import "./layout/form-footer";

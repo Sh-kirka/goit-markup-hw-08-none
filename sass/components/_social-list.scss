@@ -1,0 +1,13 @@
+.social-list {
+  @include flex-center(flex, center, center);
+  padding-left: 0;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+.social-list-item {
+  padding-left: 0;
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}

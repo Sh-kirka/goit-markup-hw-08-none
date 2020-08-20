@@ -1,0 +1,240 @@
+/* Модальное окно*/
+.backdrop-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  @include flex-center(flex, center, center);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal-form {
+  position: relative;
+  height: 581px;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-white-color;
+  border-radius: 4px;
+  padding: 40px;
+  &-title {
+    font-family: $primary-font;
+    font-style: normal;
+    @include font(20px, 700, 1.15);
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin: 0px;
+    margin-bottom: 30px;
+    color: $secondary-text-color;
+  }
+}
+.modal-form-input-wrapper {
+  position: relative;
+  margin-bottom: 28px;
+}
+.modal-form-input {
+  height: 40px;
+  padding-left: 42px;
+  display: block;
+  width: 100%;
+  font-family: $primary-font;
+  font-style: normal;
+  @include font(14px, 500);
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  background-color: transparent;
+  &::placeholder {
+    color: transparent;
+    transition: color 250ms linear 250ms;
+  }
+  .text {
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+.modal-form-input:focus::placeholder {
+  color: #000000;
+}
+
+.modal-form-input.text:focus + .modal-form-message-label,
+.modal-form-input.text:hover + .modal-form-message-label,
+.modal-form-input.text:not(:placeholder-shown) + .modal-form-message-label {
+  transform: translateY(-32px) translateX(-0px);
+  color: $accent-color;
+}
+.modal-form-input:focus,
+.modal-form-input:not(:placeholder-shown) {
+  outline: none;
+  border-color: $accent-color;
+}
+.modal-form-message:focus + .modal-form-message-label,
+.modal-form-message:not(:placeholder-shown) + .modal-form-message-label {
+  outline: none;
+  @include font(12px, 400, 1.17);
+  letter-spacing: 0.01em;
+}
+.modal-form-message:focus + .modal-form-message-label {
+  color: $accent-color;
+  outline: none;
+}
+.modal-form-message {
+  height: 120px;
+  resize: none;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 28px;
+  align-items: center;
+  margin-bottom: 30px;
+  &:focus {
+    border-color: $accent-color;
+    outline: none;
+  }
+}
+
+.modal-form-message-label {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  transition: transform 250ms linear, color 250ms linear;
+}
+.modal-form-svg {
+  position: absolute;
+  top: 25%;
+  left: 19px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  fill: $secondary-text-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+  font-family: $primary-font;
+  color: $primary-text-color;
+  @include font(14px, 400);
+  font-style: normal;
+  letter-spacing: 0.01em;
+  transition: transform 250ms linear;
+}
+.modal-form-input:focus + .modal-form-label,
+.modal-form-input:hover + .modal-form-label,
+.modal-form-input:not(:placeholder-shown) + .modal-form-label {
+  transform: translateY(-38px) translateX(-28px);
+  color: $accent-color;
+}
+
+.modal-form-input:focus ~ .modal-form-svg,
+.modal-form-input:hover ~ .modal-form-svg,
+.modal-form-input:not(:placeholder-shown) ~ .modal-form-svg {
+  fill: $accent-color;
+}
+.modal-form-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.modal-form-custom-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-left: 12px;
+  display: inline-block;
+  border: 2px solid $secondary-text-color;
+  border-radius: 2px;
+}
+.text {
+  width: 450px;
+  height: 120px;
+  resize: none;
+  padding: 12px 16px;
+}
+.modal-form-option-consent {
+  margin-left: 9px;
+  font-family: $primary-font;
+  font-style: normal;
+  @include font(14px, 400, 1.7);
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  a {
+    color: $accent-color;
+  }
+}
+.modal-form-checkbox:checked + .modal-form-custom-checkbox {
+  background-color: $accent-color;
+  background-image: url(../images/icons/check.svg);
+  background-position: 50% 50%;
+  border: 2px solid $accent-color;
+  border-radius: 2px;
+}
+.modal-close-button:focus .modal-close-button-svg,
+.modal-close-button:hover .modal-close-button-svg {
+  fill: $accent-color;
+}
+.modal-form-button {
+  @include font(16px, 700, 1.87);
+  letter-spacing: 0.06em;
+  background-color: $accent-color;
+  color: $primary-white-color;
+  padding: 10px 32px 10px 32px;
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  border-radius: 4px;
+  border-color: $accent-color;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 30px;
+
+  &:focus,
+  &:hover {
+    background-color: $modal-theme-color;
+  }
+}
+.modal-close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: color 250ms linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  @include flex-center(flex, center, center);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &-svg {
+    position: absolute;
+    @include flex-center(flex, center, center);
+    width: 11px;
+    height: 11px;
+    fill: $secondary-text-color;
+  }
+}
