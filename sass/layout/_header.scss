@@ -11,6 +11,20 @@
 .navigation {
   @include flex-center(flex, center, center);
 }
+.nav-menu-button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border: 0;
+  border-color: transparent;
+  .icon-cross {
+    display: none;
+  }
+}
+.nav-menu-button.is-open .icon-cross {
+  display: block;
+}
 .navigation-list {
   display: flex;
   .link {
