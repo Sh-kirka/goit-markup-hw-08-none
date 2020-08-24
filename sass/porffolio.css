@@ -151,6 +151,10 @@ img {
   display: block;
 }
 
+.nav-menu-button.is-open .icon-menu {
+  display: none;
+}
+
 .navigation-list {
   display: -webkit-box;
   display: -ms-flexbox;

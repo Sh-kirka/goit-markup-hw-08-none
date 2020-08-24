@@ -25,6 +25,9 @@
 .nav-menu-button.is-open .icon-cross {
   display: block;
 }
+.nav-menu-button.is-open .icon-menu {
+  display: none;
+}
 .navigation-list {
   display: flex;
   .link {
